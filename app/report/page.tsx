@@ -1041,7 +1041,7 @@ function RecommendationCard({ recommendation, isExpanded, onToggle, expandedCard
             </div>
             <div className="p-3 bg-[#f8f6f2] rounded-lg border border-[#3a3a3a]/10">
               <div className="flex gap-4 text-xs flex-wrap">
-                {Object.entries(recommendation.scoreImprovement).map(([dimension, improvement]) => {
+                {(Object.entries(recommendation.scoreImprovement) as [string, number][]).map(([dimension, improvement]) => {
                   const colors = {
                     sleep: '#4b6fa8',
                     stress: '#7a8cc4', 

@@ -40,20 +40,19 @@ export async function generateReportPDF(): Promise<void> {
 
     // Capture the report content
     const canvas = await html2canvas(reportElement, {
-      scale: 2,
       useCORS: true,
       logging: false,
       backgroundColor: '#f8f6f2',
       windowWidth: reportElement.scrollWidth,
       windowHeight: reportElement.scrollHeight,
-      onclone: (clonedDoc) => {
+      onclone: (clonedDoc: Document) => {
         // Ensure all canvas elements are rendered
         const canvases = clonedDoc.querySelectorAll('canvas');
         canvases.forEach((canvas) => {
           canvas.style.display = 'block';
         });
       }
-    });
+    } as any);
 
     const imgData = canvas.toDataURL('image/png', 1.0);
     
@@ -101,13 +100,12 @@ export async function generateReportImage(): Promise<void> {
 
   try {
     const canvas = await html2canvas(reportElement, {
-      scale: 2,
       useCORS: true,
       logging: false,
       backgroundColor: '#f8f6f2',
       windowWidth: reportElement.scrollWidth,
       windowHeight: reportElement.scrollHeight
-    });
+    } as any);
 
     // Convert to blob and download
     canvas.toBlob((blob) => {

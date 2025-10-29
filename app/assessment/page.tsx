@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import RadarChart from '../components/RadarChart';
 import { 
@@ -33,7 +33,7 @@ import {
 } from '../components/assessment/BodySystems';
 
 // Assessment page implementing the Health Assessment System from PRD
-export default function Assessment() {
+function Assessment() {
   // Basic state management
   const [currentSection, setCurrentSection] = useState(0);
   const [responses, setResponses] = useState<Record<string, number | string | string[]>>({
@@ -1958,3 +1958,14 @@ export default function Assessment() {
     </div>
   );
 }
+
+// Wrapper component with Suspense for useSearchParams
+function AssessmentWithSuspense() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Assessment />
+    </Suspense>
+  );
+}
+
+export default AssessmentWithSuspense;
