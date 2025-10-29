@@ -1,0 +1,651 @@
+@import "tailwindcss";
+
+/* Human Signal Design System - Mid-century modern retro-futuristic */
+:root {
+  /* Human Signal Color Palette */
+  --cream: #f8f6f2;
+  --indigo: #4b6fa8;
+  --periwinkle: #7a8cc4; 
+  --violet: #8a6fa3;
+  --red-orange: #d95e40;
+  --charcoal: #3a3a3a;
+  --white: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--cream);
+  --color-foreground: var(--charcoal);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Centered layout entrance animations for Human Signal */
+
+/* Signal emergence - like a transmission coming online */
+@keyframes signal-emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+    filter: blur(12px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(-5px);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* Wave text entrance - like ripples spreading */
+@keyframes wave-text {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(6px);
+    letter-spacing: 0.3em;
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateY(-5px);
+    filter: blur(1px);
+    letter-spacing: 0.05em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+    letter-spacing: normal;
+  }
+}
+
+/* Elegant fade in */
+@keyframes fade-in-elegant {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Content rise */
+@keyframes content-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+/* Button emerge with signal effect */
+@keyframes button-emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-3px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply animations with staggered timing */
+.animate-signal-emerge {
+  animation: signal-emerge 1.4s ease-out 0.2s both;
+}
+
+.animate-wave-text {
+  animation: wave-text 1.2s ease-out 0.8s both;
+}
+
+.animate-fade-in-elegant {
+  animation: fade-in-elegant 0.9s ease-out 1.4s both;
+}
+
+.animate-content-rise {
+  animation: content-rise 0.8s ease-out 1.8s both;
+}
+
+.animate-button-emerge {
+  animation: button-emerge 1.1s ease-out 2.2s both;
+}
+
+/* Custom signal trail cursor */
+.cursor-custom {
+  cursor: none;
+}
+
+/* Main cursor dot */
+.cursor-main {
+  width: 8px;
+  height: 8px;
+  background: rgba(122, 140, 196, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease-out;
+}
+
+/* Cursor trail dots */
+.cursor-trail {
+  width: 5px;
+  height: 5px;
+  background: rgba(122, 140, 196, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+}
+
+/* Outer cursor ring - subtle breathing */
+.cursor-ring {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(122, 140, 196, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  animation: cursor-breathe 3s ease-in-out infinite;
+}
+
+@keyframes cursor-breathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+/* Hover states handled via JavaScript */
+
+/* Aura floating animation - very subtle scaling and opacity changes */
+@keyframes auraFloatSubtle {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+    opacity: 0.4;
+  }
+  25% {
+    transform: scale(1.005) translateY(-1px);
+    opacity: 0.42;
+  }
+  50% {
+    transform: scale(1.01) translateY(-2px);
+    opacity: 0.45;
+  }
+  75% {
+    transform: scale(1.005) translateY(-1px);
+    opacity: 0.42;
+  }
+}
+
+/* Analysis mode aura animation - slower, more meditative breathing */
+@keyframes auraFloatAnalysis {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+    opacity: 0.5;
+  }
+  25% {
+    transform: scale(1.008) translateY(-1.5px);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.015) translateY(-3px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: scale(1.008) translateY(-1.5px);
+    opacity: 0.55;
+  }
+}
+
+/* Aura rotation animation - very slow continuous rotation */
+@keyframes auraSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Human breathing animation - very subtle scaling to simulate breathing */
+@keyframes humanBreathSubtle {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  }
+  50% {
+    transform: scale(1.008) translateY(-1px);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.12));
+  }
+}
+
+/* Human heartbeat animation - synced with relaxed heartbeat signal */
+@keyframes humanHeartbeat {
+  0%, 20%, 35%, 100% {
+    transform: scale(1) translateY(0px);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  }
+  /* First heartbeat pulse */
+  5%, 10% {
+    transform: scale(1.012) translateY(-1px);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+  }
+  /* Second heartbeat pulse (weaker) */
+  25%, 30% {
+    transform: scale(1.006) translateY(-0.5px);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.12));
+  }
+}
+
+/* Silky smooth heartbeat - continuous flow */
+@keyframes auraRipple {
+  0% {
+    transform: scale3d(0.5, 0.5, 1);
+    opacity: 0;
+  }
+  12% {
+    transform: scale3d(1.2, 1.2, 1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: scale3d(3.5, 3.5, 1);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale3d(8, 8, 1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale3d(0.5, 0.5, 1);
+    opacity: 0;
+  }
+}
+
+/* Silky smooth ring ripple - continuous flow */
+@keyframes ringRipple {
+  0% {
+    transform: scale3d(0.3, 0.3, 1);
+    opacity: 0;
+  }
+  12% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale3d(4, 4, 1);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale3d(12, 12, 1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale3d(0.3, 0.3, 1);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Paper texture effect - subtle grain */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(58, 58, 58, 0.08) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure content is above texture */
+.relative {
+  position: relative;
+  z-index: 2;
+}
+
+/* Custom slider styling for assessment questions */
+.slider {
+  background: linear-gradient(to right, var(--periwinkle) 0%, var(--indigo) 100%);
+  outline: none;
+  border-radius: 8px;
+  height: 8px;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red-orange) 0%, #e6744a 100%);
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15), 0 0 0 1px rgba(217, 94, 64, 0.2);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2), 0 0 0 2px rgba(217, 94, 64, 0.3);
+}
+
+/* Firefox */
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red-orange) 0%, #e6744a 100%);
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+
+.slider::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(to right, var(--periwinkle) 0%, var(--indigo) 100%);
+  border-radius: 8px;
+}
+
+/* Focus states for accessibility */
+.slider:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 94, 64, 0.2);
+}
+
+.slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15), 0 0 0 3px rgba(217, 94, 64, 0.4);
+}
+
+.slider:focus::-moz-range-thumb {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15), 0 0 0 3px rgba(217, 94, 64, 0.4);
+}
+
+/* Sleep Summary Card Animations */
+@keyframes score-pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 0 20px rgba(75, 111, 168, 0.3);
+  }
+}
+
+@keyframes score-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
+@keyframes progress-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+@keyframes insight-reveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Apply summary card animations */
+.animate-score-pulse {
+  animation: score-pulse 2s ease-in-out infinite;
+}
+
+.animate-progress-shimmer {
+  position: relative;
+}
+
+.animate-progress-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: progress-shimmer 3s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+.animate-gentle-bounce {
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+.animate-insight-reveal {
+  animation: insight-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-score-breathe {
+  animation: score-breathe 3s ease-in-out infinite;
+}
+
+/* Analysis mode animations */
+@keyframes analysisGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes detectionDotAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes detectionDotPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 4px rgba(122, 140, 196, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 8px rgba(122, 140, 196, 0.5);
+  }
+}
+
+/* Staggered transition fade out animations for home page elements */
+@keyframes fade-out-transition {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.fade-out-transition-1 {
+  animation: fade-out-transition 0.4s ease-out 0s forwards;
+}
+
+.fade-out-transition-2 {
+  animation: fade-out-transition 0.4s ease-out 0.1s forwards;
+}
+
+.fade-out-transition-3 {
+  animation: fade-out-transition 0.4s ease-out 0.2s forwards;
+}
+
+.fade-out-transition-4 {
+  animation: fade-out-transition 0.4s ease-out 0.3s forwards;
+}
+
+.fade-out-transition-5 {
+  animation: fade-out-transition 0.4s ease-out 0.4s forwards;
+}
+
+/* Organic transformation animations for Phase 4 */
+/* Transform circular auras into organic blob shapes with smooth curves */
+
+/* Outer aura organic transformation - smooth curved blob matching initialaura_1.svg */
+.organic-transform-outer {
+  clip-path: path('M 50% 15% C 58% 10%, 70% 12%, 82% 23% C 88% 30%, 88% 42%, 82% 52% C 78% 68%, 75% 80%, 62% 88% C 52% 92%, 48% 92%, 38% 88% C 25% 80%, 22% 68%, 18% 52% C 12% 42%, 12% 30%, 18% 23% C 30% 12%, 42% 10%, 50% 15% Z');
+  transition: clip-path 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Fallback for browsers that don't support path() in clip-path */
+@supports not (clip-path: path('')) {
+  .organic-transform-outer {
+    border-radius: 48% 52% 45% 55% / 42% 38% 62% 58%;
+    transition: border-radius 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}
+
+/* Middle aura organic transformation - slightly smaller organic curves */
+.organic-transform-middle {
+  clip-path: path('M 50% 18% C 56% 14%, 68% 15%, 78% 25% C 84% 32%, 84% 42%, 78% 50% C 75% 65%, 72% 76%, 60% 82% C 52% 86%, 48% 86%, 40% 82% C 28% 76%, 25% 65%, 22% 50% C 16% 42%, 16% 32%, 22% 25% C 32% 15%, 44% 14%, 50% 18% Z');
+  transition: clip-path 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@supports not (clip-path: path('')) {
+  .organic-transform-middle {
+    border-radius: 46% 54% 43% 57% / 40% 36% 64% 60%;
+    transition: border-radius 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}
+
+/* Inner aura organic transformation - most compact organic curves */
+.organic-transform-inner {
+  clip-path: path('M 50% 22% C 54% 18%, 66% 20%, 74% 28% C 78% 34%, 78% 42%, 74% 48% C 72% 60%, 68% 70%, 58% 76% C 52% 78%, 48% 78%, 42% 76% C 32% 70%, 28% 60%, 26% 48% C 22% 42%, 22% 34%, 26% 28% C 34% 20%, 46% 18%, 50% 22% Z');
+  transition: clip-path 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@supports not (clip-path: path('')) {
+  .organic-transform-inner {
+    border-radius: 44% 56% 41% 59% / 38% 34% 66% 62%;
+    transition: border-radius 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}
+
+/* Enhance the breathing animations to work with organic shapes */
+@keyframes organicBreathingFloat {
+  0%, 100% {
+    transform: scale(1) translateY(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: scale(1.015) translateY(-2px);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.025) translateY(-4px);
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1.015) translateY(-2px);
+    opacity: 0.65;
+  }
+}
+
+/* Apply organic breathing when in organic mode */
+.organic-transform-outer,
+.organic-transform-middle, 
+.organic-transform-inner {
+  animation: organicBreathingFloat 8s ease-in-out infinite;
+}
+
+/* Stagger the organic breathing animations for natural feel */
+.organic-transform-outer {
+  animation-delay: 0s;
+}
+
+.organic-transform-middle {
+  animation-delay: 0.5s;
+}
+
+.organic-transform-inner {
+  animation-delay: 1s;
+}
+

@@ -1,0 +1,31 @@
+<svg width="461" height="511" viewBox="0 0 461 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="230.716" y1="0.343018" x2="230.716" y2="510.204" stroke="#E8E6E3"/>
+<line x1="9.68945" y1="127.375" x2="451.242" y2="382.306" stroke="#E8E6E3"/>
+<line x1="451.242" y1="128.241" x2="9.68947" y2="383.172" stroke="#E8E6E3"/>
+<circle cx="230.216" cy="255.274" r="179.5" stroke="#E8E6E3"/>
+<circle cx="230.216" cy="255.274" r="129.5" stroke="#E8E6E3"/>
+<circle cx="230.216" cy="255.274" r="229.5" stroke="#E8E6E3"/>
+<circle cx="230.216" cy="255.274" r="79.5" stroke="#E8E6E3"/>
+<circle cx="230.216" cy="255.274" r="29.5" stroke="#D95E40" stroke-opacity="0.2"/>
+<circle cx="230.216" cy="255.274" r="14.5" stroke="#D95E40" stroke-opacity="0.5"/>
+<circle cx="230.216" cy="255.274" r="5" fill="#D95E40"/>
+<path d="M196.622 235.85C204.254 222.752 215.174 216.585 230.334 216.542C245.629 216.498 256.185 222.578 263.745 235.875C271.19 248.971 271.303 261.539 263.745 274.571C256.101 287.75 245.413 294.018 230.178 294.006C215.026 293.994 204.147 287.766 196.563 274.649C188.961 261.502 188.976 248.972 196.622 235.85Z" fill="url(#paint0_radial_62_350)" fill-opacity="0.8" style="mix-blend-mode:multiply"/>
+<circle cx="230.475" cy="216.541" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="230.475" cy="216.541" r="3" fill="#7A8CC4"/>
+<circle cx="195.575" cy="234.834" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="195.575" cy="234.834" r="3" fill="#7A8CC4"/>
+<circle cx="197.356" cy="275.854" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="197.356" cy="275.854" r="3" fill="#7A8CC4"/>
+<circle cx="231.36" cy="293.259" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="231.36" cy="293.259" r="3" fill="#7A8CC4"/>
+<circle cx="263.608" cy="236.615" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="263.608" cy="236.615" r="3" fill="#7A8CC4"/>
+<circle cx="263.6" cy="274.084" r="15" fill="#7A8CC4" fill-opacity="0.1"/>
+<circle cx="263.6" cy="274.084" r="3" fill="#7A8CC4"/>
+<defs>
+<radialGradient id="paint0_radial_62_350" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230.123 255.274) rotate(90) scale(38.7322 39.2486)">
+<stop stop-color="#7A8CC4" stop-opacity="0.2"/>
+<stop offset="1" stop-color="#7A8CC4"/>
+</radialGradient>
+</defs>
+</svg>
